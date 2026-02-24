@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vocabulary — FrenchMe</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="../" class="nav-logo">FrenchMe</a>
+  <div class="spacer"></div>
+  <a href="../vocab/" class="nav-btn active">
+    <span class="icon">📚</span> Vocab
+  </a>
+  <a href="../quiz/" class="nav-btn">
+    <span class="icon">🎯</span> Quiz
+  </a>
+  <a href="../grammar/" class="nav-btn">
+    <span class="icon">📖</span> Grammar
+  </a>
+  <a href="../cards/" class="nav-btn">
+    <span class="icon">🃏</span> Cards
+  </a>
+</nav>
+
+<!-- PAGE CONTENT -->
+<div class="page-container">
+  <div class="page-header">
+    <h1>📚 Vocabulary List</h1>
+    <p>Browse and search <span id="vocab-total">0</span> French words</p>
+  </div>
+  <div class="scroll-area">
+    <div class="vocab-controls">
+      <input type="text" id="vocab-search" placeholder="Search French or English..." oninput="vocabSearch()">
+      <button class="btn btn-ghost" id="toggle-dir-btn" onclick="toggleDir()">🇫🇷→🇬🇧</button>
+    </div>
+    <div class="vocab-table-wrap">
+      <table class="vocab-table">
+        <thead>
+          <tr>
+            <th id="th-col1">French</th>
+            <th id="th-col2">English</th>
+          </tr>
+        </thead>
+        <tbody id="vocab-tbody"></tbody>
+      </table>
+    </div>
+    <div class="vocab-pagination">
+      <span id="vocab-page-info"></span>
+      <div style="display:flex;gap:8px;">
+        <button class="btn btn-ghost" id="vocab-prev" onclick="vocabPrev()">← Prev</button>
+        <button class="btn btn-ghost" id="vocab-next" onclick="vocabNext()">Next →</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="../js/data.js"></script>
+<script src="../js/tts.js"></script>
+<script src="../js/vocab.js"></script>
+
+</body>
+</html>
