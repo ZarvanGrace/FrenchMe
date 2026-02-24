@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Flashcards — FrenchMe</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+
+<!-- MUTE BUTTON -->
+<button id="mute-btn">🔊</button>
+
+<!-- NAV -->
+<nav>
+  <a href="../" class="nav-logo">FrenchMe</a>
+  <div class="spacer"></div>
+  <a href="../vocab/" class="nav-btn">
+    <span class="icon">📚</span> Vocab
+  </a>
+  <a href="../quiz/" class="nav-btn">
+    <span class="icon">🎯</span> Quiz
+  </a>
+  <a href="../grammar/" class="nav-btn">
+    <span class="icon">📖</span> Grammar
+  </a>
+  <a href="../cards/" class="nav-btn active">
+    <span class="icon">🃏</span> Cards
+  </a>
+</nav>
+
+<!-- PAGE CONTENT -->
+<div class="flash-content">
+  <!-- Pack Selection -->
+  <div id="flash-pack-select">
+    <h2>Select a Pack</h2>
+    <p>Choose a category to start reviewing flashcards.</p>
+    <div class="pack-card" onclick="selectPack('all')">
+      <div class="pack-name">🌍 All Words</div>
+      <div class="pack-meta">Complete vocabulary set</div>
+      <div class="pack-due" id="pack-due-all">0 cards due</div>
+    </div>
+    <div class="pack-card" onclick="selectPack('basics')">
+      <div class="pack-name">⭐ Basics</div>
+      <div class="pack-meta">Common greetings & essentials</div>
+      <div class="pack-due" id="pack-due-basics">0 cards due</div>
+    </div>
+    <div class="pack-card" onclick="selectPack('verbs')">
+      <div class="pack-name">🏃 Action Verbs</div>
+      <div class="pack-meta">Commonly used verbs</div>
+      <div class="pack-due" id="pack-due-verbs">0 cards due</div>
+    </div>
+  </div>
+
+  <!-- Study Area -->
+  <div id="flash-study">
+    <div class="flash-progress">
+      <span id="flash-progress-text">Card 1/10</span>
+      <div class="progress-bar-track">
+        <div class="progress-bar-fill" id="flash-progress-bar" style="width:0%;"></div>
+      </div>
+    </div>
+
+    <div class="flip-container" id="flip-container" onclick="flipCard()">
+      <div class="flipper" id="flipper">
+        <div class="card-face card-front">
+          <div class="card-prompt">TRANSLATE TO ENGLISH</div>
+          <div class="card-word" id="card-front-word">Bonjour</div>
+          <div class="card-hint">Click to reveal</div>
+        </div>
+        <div class="card-face card-back">
+          <div class="card-prompt">ENGLISH MEANING</div>
+          <div class="card-word" id="card-back-word">Hello</div>
+          <div class="card-hint">Click to flip back</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="flash-actions">
+      <button class="btn btn-red" onclick="rateCard('again')">❌ Again</button>
+      <button class="btn btn-gold" onclick="rateCard('hard')">🔄 Hard</button>
+      <button class="btn btn-green" onclick="rateCard('easy')">✅ Easy</button>
+    </div>
+  </div>
+
+  <!-- Session Complete -->
+  <div id="flash-result" class="flash-result" style="display:none;">
+    <h3>Session Complete! 🎉</h3>
+    <p id="flash-result-msg">You've reviewed all cards in this pack.</p>
+    <button class="btn btn-primary" onclick="backToPacks()">← Back to Packs</button>
+  </div>
+</div>
+
+<script src="../js/data.js"></script>
+<script src="../js/tts.js"></script>
+<script src="../js/cards.js"></script>
+
+</body>
+</html>
