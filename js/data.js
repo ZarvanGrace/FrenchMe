@@ -10,7 +10,7 @@ const VOCAB = [
   { fr: "je ne comprends pas", en: "I don't understand" },
   { fr: "comment allez-vous?", en: "how are you?" },
   { fr: "très bien", en: "very good" },
-  { fr: "un", en: "one" },
+  { fr: "un/une", en: "one" },
   { fr: "deux", en: "two" },
   { fr: "trois", en: "three" },
   { fr: "quatre", en: "four" },
