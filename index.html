@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FrenchMe — Learn French</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+<style>
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 28px;
+    gap: 24px;
+  }
+  .hero h1 {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: 48px;
+    letter-spacing: -1px;
+    background: linear-gradient(135deg, var(--accent3), var(--accent));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .hero p {
+    font-size: 18px;
+    color: var(--text2);
+    max-width: 480px;
+  }
+  .hero-cta {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  @media (max-width: 600px) {
+    .hero h1 { font-size: 36px; }
+    .hero p { font-size: 16px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="/" class="nav-logo">FrenchMe</a>
+  <div class="spacer"></div>
+  <a href="/vocab/" class="nav-btn">
+    <span class="icon">📚</span> Vocab
+  </a>
+  <a href="/quiz/" class="nav-btn">
+    <span class="icon">🎯</span> Quiz
+  </a>
+  <a href="/grammar/" class="nav-btn">
+    <span class="icon">📖</span> Grammar
+  </a>
+  <a href="/cards/" class="nav-btn">
+    <span class="icon">🃏</span> Cards
+  </a>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <h1>Master French, Naturally</h1>
+  <p>Build your vocabulary with interactive flashcards, quizzes, and pronunciation practice. All in one place.</p>
+  <div class="hero-cta">
+    <a href="/vocab/" class="btn btn-primary">Start Learning</a>
+    <a href="/grammar/" class="btn btn-ghost">Grammar Guide</a>
+  </div>
+</div>
+
+</body>
+</html>
